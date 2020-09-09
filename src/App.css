@@ -5,7 +5,7 @@
   -ms-box-sizing: border-box;
   /* color: #ffffff; */
   color: #171614;
-  /* background: #00000b; */
+  background: #eee;
   outline: none;
 } 
 .App {
@@ -15,6 +15,17 @@
   width: 100vw;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  width: 50%;
+  height: auto;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
 }
 
 h1.text--heading {

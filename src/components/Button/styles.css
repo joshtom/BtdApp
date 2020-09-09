@@ -4,7 +4,7 @@ button.Button--btn{
     height: 40px;
     border: 1px solid #999999;
     background: white;
-    margin-top: 20px;
+    margin-bottom: 20px;
     color: #8B7575;
     transition: all 0.3s ease 0s;   
     cursor: pointer;

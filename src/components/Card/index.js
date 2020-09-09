@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './styles.css';
 
 class Card extends Component {
   render() {
     return(
-      <h1> Card Component </h1>
+      <Fragment>
+        <li className="card--children"> { this.props.children } </li>
+      </Fragment>
     )
   }
 }

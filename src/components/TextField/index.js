@@ -10,6 +10,7 @@ class TextField extends Component {
          onChange={this.props.handleOnChange}
          placeholder={this.props.placeholder}
          className="text_field--input"
+         value={this.props.value}
          />
       </Fragment>
     )

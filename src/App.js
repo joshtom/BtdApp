@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import TextField from './components/TextField';
-// import Card from './components/Card';
+import Card from './components/Card';
 import Button from './components/Button'
 import './App.css';
 
@@ -8,20 +8,25 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      TODO: [],
+      todo: [],
       value: '',
-      show: false
      }
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   
   handleOnChange(event) {
     this.setState({
       value: event.target.value
     })
-    // this.setState({
-    //   show: true
-    // })
+  }
+
+  handleClick() {
+    // Push input values into the todo array []
+    this.setState({
+      todo: [...this.state.todo, this.state.value],
+      value: ''
+    })
   }
 
   
@@ -29,22 +34,35 @@ class App extends Component {
     return(
       <Fragment>
       <div className="App">
+      <div className="container">
       <h1 className="text--heading"> TODOList. </h1>
       <TextField 
       type="text"
       placeholder="What is your main focus today?"
+      value={this.state.value}
       handleOnChange={this.handleOnChange}
       />
       { 
-        // Show the button if the value is occupied
-        (this.state.value) ? 
-        <Button>
+        // Show the button if the input value is populated 
+        (this.state.value && this.state.value !== '') ? 
+        <Button handleClick={this.handleClick}>
           ADD
-        </Button>
+        </Button> 
         : 
         ""
       }
-      {/* <Card /> */}
+      { 
+        // Display all the card component
+        (this.state.todo.length !== 0) ? 
+        this.state.todo.reverse().map((item, index) => 
+          <Card key={index}>
+            { item }  
+          </Card>
+        )
+        :
+        null
+      }
+      </div>
       </div>
       </Fragment>
     )

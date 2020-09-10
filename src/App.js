@@ -62,7 +62,7 @@ class App extends Component {
       { 
         // Display all the card component
         (this.state.todo.length !== 0) ? 
-        this.state.todo.reverse().map((item, index) => 
+        this.state.todo.map((item, index) => 
           <Card key={index}>
             { item }  
           </Card>

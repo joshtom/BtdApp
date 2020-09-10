@@ -5,20 +5,17 @@ button.Button--btn{
     border: 1px solid #999999;
     background: white;
     margin-bottom: 20px;
-    color: #8B7575;
-    transition: all 0.3s ease 0s;   
+    color: #8B7575; 
     cursor: pointer;
 }
 
-button.Button--btn:hover::after{
+button.Button--btn:hover::before{
     content: "";
     position: absolute;
     top: 10px;
     left: 10px;
-    background: #EFEFEF;
+    background: rgba(0, 0, 0, .2);    
     width: 100%;
     height: 100%;
-    transition: all .4s;
     z-index: -1;
-
 }

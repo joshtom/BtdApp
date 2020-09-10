@@ -6,7 +6,7 @@ class Button extends Component {
     return(
       <Fragment>
          <button
-         onClick={this.props.handleClick}
+         type={this.props.type}
          className="Button--btn"
          >
              { this.props.children }

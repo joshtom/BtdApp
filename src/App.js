@@ -12,7 +12,7 @@ class App extends Component {
       value: '',
      }
     this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   handleOnChange(event) {
@@ -21,12 +21,18 @@ class App extends Component {
     })
   }
 
-  handleClick() {
+  handleSubmit(event) {
+    event.preventDefault()
+    // Check if the input field is empty 
+    if(this.state.value === '') {
+      return false;
+    }
     // Push input values into the todo array []
     this.setState({
-      todo: [...this.state.todo, this.state.value],
-      value: ''
-    })
+        todo: [...this.state.todo, this.state.value],
+        value: ''
+      })
+    
   }
 
   
@@ -36,6 +42,7 @@ class App extends Component {
       <div className="App">
       <div className="container">
       <h1 className="text--heading"> TODOList. </h1>
+      <form onSubmit={this.handleSubmit}>
       <TextField 
       type="text"
       placeholder="What is your main focus today?"
@@ -45,12 +52,13 @@ class App extends Component {
       { 
         // Show the button if the input value is populated 
         (this.state.value && this.state.value !== '') ? 
-        <Button handleClick={this.handleClick}>
+        <Button type="submit">
           ADD
         </Button> 
         : 
         ""
       }
+      </form>
       { 
         // Display all the card component
         (this.state.todo.length !== 0) ? 

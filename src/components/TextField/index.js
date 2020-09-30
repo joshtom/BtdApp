@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
-import "./styles.css";
 
 const Input = styled.input`
   height: 50px;
@@ -25,7 +24,6 @@ function TextField({ type, handleOnChange, placeholder, value }) {
           type={type}
           onChange={handleOnChange}
           placeholder={placeholder}
-          className="text_field--input"
           value={value}
         />
       </Fragment>

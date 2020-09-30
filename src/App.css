@@ -30,12 +30,3 @@
 h1.text--heading {
   position: relative;
 }
-
-/* h1.text--heading::before {
-  position: absolute;
-  content: "";
-  width: 60%;
-  height: 10px;
-  bottom: 0px;
-  background: white;
-} */
